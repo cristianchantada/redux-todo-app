@@ -3,13 +3,14 @@ import { TodoItemComponent } from "../todo-item/todo-item.component";
 import { Todo } from '../models/todo.model';
 import { appState } from '../../appState.reducer';
 import { Store } from '@ngrx/store';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'todo-list',
   standalone: true,
   templateUrl: './todo-list.component.html',
   changeDetection: ChangeDetectionStrategy.Default,
-  imports: [TodoItemComponent],
+  imports: [TodoItemComponent, CommonModule],
 })
 export class TodoListComponent implements OnInit {
 
