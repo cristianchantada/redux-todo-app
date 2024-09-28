@@ -34,6 +34,10 @@ const _todoReducer = createReducer(
     });
   }),
 
+  on(actions.limpiarCompletados, (state) => {
+    return state.filter((todo) => !todo.completado);
+  }),
+
   on(actions.editar, (state, { id, texto }) => {
     return state.map((todo) => {
       if (todo.id === id) {

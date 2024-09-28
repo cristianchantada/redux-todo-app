@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { appState } from '../../appState.reducer';
 import { filtrosValidos, setFiltro } from '../../filtro/filtro.actions';
 import { CommonModule } from '@angular/common';
+import { limpiarCompletados } from '../todo.actions';
 
 @Component({
   selector: 'todo-footer',
@@ -11,7 +12,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   templateUrl: './todo-footer.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  changeDetection: ChangeDetectionStrategy.Default,
 })
 export class TodoFooterComponent {
 
@@ -32,6 +33,10 @@ export class TodoFooterComponent {
 
   cambiarFiltro(filtro: filtrosValidos) {
     this.store.dispatch(setFiltro({filtro: filtro}))
+  }
+
+  limpiarCompletados(){
+    this.store.dispatch(limpiarCompletados())
   }
 
 

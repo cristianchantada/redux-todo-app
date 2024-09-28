@@ -1,5 +1,5 @@
 <ul class="todo-list">
-  @for (todo of todos; track todo.id) {
+  @for (todo of todos | filtroTodo:filtroActual; track todo.id) {
     <todo-item [todo]="todo"/>
   }
 </ul>
